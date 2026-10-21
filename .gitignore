@@ -1,0 +1,22 @@
+# Private keys
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Ansible temporary files
+*.retry
+*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Editor files
+.vscode/
+.idea/

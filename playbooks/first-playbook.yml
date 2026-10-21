@@ -1,0 +1,11 @@
+---
+- name: My first Ansible playbook
+  hosts: webservers
+  tasks:
+    - name: Display server hostname
+      ansible.builtin.command: hostname
+      register: hostname_output
+
+    - name: Display result
+      ansible.builtin.debug:
+        msg: "Server hostname is {{ hostname_output.stdout }}"

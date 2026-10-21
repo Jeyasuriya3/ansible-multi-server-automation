@@ -1,0 +1,12 @@
+---
+- name: Check disk usage on managed servers
+  hosts: webservers
+  tasks:
+    - name: Check filesystem disk usage
+      ansible.builtin.command: df -h /
+      register: disk_output
+      changed_when: false
+
+    - name: Display disk usage
+      ansible.builtin.debug:
+        var: disk_output.stdout_lines
